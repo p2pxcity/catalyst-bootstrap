@@ -155,8 +155,7 @@ services:
     - generate-configs
     - api-node-0-nemgen
 
-  mysql:
-    hostname: catalyst_db
+  dbdata:
     image: mysql:5.7
     restart: always
     ports:
@@ -165,6 +164,13 @@ services:
       - ./data/mysql:/docker-entrypoint-initdb.d
     environment:
       MYSQL_ROOT_PASSWORD: example
-      
+
+  catalyst:
+    image: p2pxcity/catalyst-standalone
+    ports:
+     - 8080:8080
+    depends_on:
+    - rest-gateway
+    - dbdata
           
 
