@@ -1,4 +1,5 @@
 
+#    Copyright 2019 Catalyst Blockchain SAS
 #    Copyright 2018 Tech Bureau, Corp
 # 
 #    Licensed under the Apache License, Version 2.0 (the "License");
@@ -161,14 +162,15 @@ services:
     ports:
      - 3306:3306
     volumes:
-      - ./data/mysql:/docker-entrypoint-initdb.d
+      - ./data/mysql:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: catalyst
 
   catalyst:
     image: p2pxcity/catalyst-standalone
     ports:
-     - 8080:8080
+     - 5678:8080
     depends_on:
     - rest-gateway
     - dbdata
