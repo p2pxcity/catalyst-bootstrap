@@ -170,7 +170,9 @@ services:
   catalyst:
     image: p2pxcity/catalyst-standalone
     ports:
-     - 5678:8080
+     - 5678:5678
+    volumes:
+    - ./build/catalyst:/var/lib/catalyst
     depends_on:
     - rest-gateway
     - dbdata
