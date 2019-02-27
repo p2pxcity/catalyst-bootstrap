@@ -169,6 +169,7 @@ services:
 
   catalyst:
     image: p2pxcity/catalyst-standalone
+    restart: always
     ports:
      - 5678:5678
     volumes:
