@@ -160,12 +160,13 @@ services:
     image: mysql:5.7
     restart: always
     ports:
-     - 13306:3306
+     - 13306:13306
     volumes:
       - ./data/mysql:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: example
       MYSQL_DATABASE: catalyst
+      MYSQL_TCP_PORT: 13306
 
   catalyst:
     image: p2pxcity/catalyst-standalone
