@@ -1,0 +1,7 @@
+---
+apps:
+  - name: 'tokenizate.io/wallet'
+    enabled: true
+    public-key: 'tokenizate_public.key'
+    role: 'user'
+
